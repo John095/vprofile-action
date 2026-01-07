@@ -29,7 +29,7 @@ jobs:
 
       - name: SonarQube Analysis
         run: sonar-scanner
-          -Dsonar.host.url=${{secrets.SONAR_HOST_URL }}
+          -Dsonar.host.url=${{secrets.SONAR_URL }}
           -Dsonar.login=${{secrets.SONAR_TOKEN }}
           -Dsonar.projectKey=${{secrets.SONAR_PROJECT_KEY }}
           -Dsonar.organization=${{secrets.SONAR_ORGANIZATION }}
@@ -45,4 +45,4 @@ jobs:
         timeout-minutes: 5
         env:
           SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
-          SONAR_HOST_URL: ${{ secrets.SONAR_HOST_URL }}
+          SONAR_HOST_URL: ${{ secrets.SONAR_URL }}
